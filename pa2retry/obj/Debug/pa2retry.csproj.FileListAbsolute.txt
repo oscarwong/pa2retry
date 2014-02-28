@@ -1,0 +1,5 @@
+C:\Users\oscarwong\Documents\Visual Studio 2012\Projects\PA2Retry\pa2retry\bin\pa2retry.dll
+C:\Users\oscarwong\Documents\Visual Studio 2012\Projects\PA2Retry\pa2retry\bin\pa2retry.pdb
+C:\Users\oscarwong\Documents\Visual Studio 2012\Projects\PA2Retry\pa2retry\obj\Debug\pa2retry.csprojResolveAssemblyReference.cache
+C:\Users\oscarwong\Documents\Visual Studio 2012\Projects\PA2Retry\pa2retry\obj\Debug\pa2retry.dll
+C:\Users\oscarwong\Documents\Visual Studio 2012\Projects\PA2Retry\pa2retry\obj\Debug\pa2retry.pdb

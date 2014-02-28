@@ -15,21 +15,16 @@ namespace pa2retry
         {
             edge = new Dictionary<char, TrieNode>();
             this.letter = c;
+            this.lastChar = false;
         }
 
-        public TrieNode getNext(TrieNode node)
+        public TrieNode getNode(char key)
         {
             TrieNode nextNode;
-            if (node.edge.TryGetValue(node.letter, out nextNode))
+            if (this.edge.TryGetValue(key, out nextNode))
                 return nextNode;
             else
                 return null;
-        }
-
-        public bool isNext(TrieNode node)
-        {
-            TrieNode nextNode;
-            return 
         }
     }
 }
