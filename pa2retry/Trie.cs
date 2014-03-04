@@ -47,34 +47,33 @@ namespace pa2retry
             TrieNode currentNode = root;
             List<string> words = new List<string>();
             currentNode = findRoot(prefix);
-            foreach(var pair in currentNode.edge)
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(prefix);
-                while (currentNode.edge != null)
-                {
-
-                }
-            }
+            if (currentNode.lastChar)
+                words.Add(prefix);
+            StringBuilder sb = new StringBuilder();
+            sb.Append(prefix);
+            return getWords(currentNode, sb, prefix, words);
         }
 
-        private List<string> getWords(TrieNode currentNode, StringBuilder sb, string prefix)
+        private List<string> getWords(TrieNode currentNode, StringBuilder sb, string prefix, List<string> words)
         {
-            List<string> words = new List<string>();
             foreach (var pair in currentNode.edge)
             {
                 if (!pair.Value.lastChar)
                 {
                     sb.Append(pair.Key);
-                    getWords(pair.Value, sb, prefix);
+                    getWords(pair.Value, sb, prefix, words);
+                    sb.Remove(sb.ToString().Length - 1, 1);
                 }
-                else
+                else if (pair.Value.lastChar && pair.Value.edge.Count == 0)
                 {
+                    sb.Append(pair.Key);
                     words.Add(sb.ToString());
-                    if (words.Count >= 10)
-                        break;
-                    sb = new StringBuilder();
-                    sb.Append(prefix);
+                    sb.Remove(sb.ToString().Length - 1, 1);
+                } else {
+                    sb.Append(pair.Key);
+                    if (pair.Value.lastChar)
+                        words.Add(sb.ToString());
+                    getWords(pair.Value, sb, prefix, words);
                 }
             }
             return words;

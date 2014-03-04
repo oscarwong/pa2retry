@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -18,11 +19,19 @@ namespace pa2retry
     {
 
         [WebMethod]
-        public void HelloWorld()
+        public List<string> HelloWorld()
         {
             Trie tree = new Trie();
-            tree.insertWord("hello");
-            tree.insertWord("hello world");
+            string line = null;
+
+            using (StreamReader reader = new StreamReader(@"C:\Users\oscarwong\Desktop\cleantitles"))
+            {
+                while ((line = reader.ReadLine()) != null) {
+                    tree.insertWord(line);
+                }
+            }
+
+            return tree.searchPrefix("hello");
         }
     }
 }
