@@ -21,8 +21,6 @@ namespace pa2retry
         [WebMethod]
         public List<string> HelloWorld()
         {
-            Trie tree = new Trie();
-            string line = null;
 
             using (StreamReader reader = new StreamReader(@"C:\Users\oscarwong\Desktop\cleantitles"))
             {
