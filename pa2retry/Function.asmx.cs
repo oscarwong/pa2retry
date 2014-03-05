@@ -19,17 +19,19 @@ namespace pa2retry
     {
 
         [WebMethod]
-        public List<string> HelloWorld()
+        public List<string> HelloWorld(string input)
         {
-
-            using (StreamReader reader = new StreamReader(@"C:\Users\oscarwong\Desktop\cleantitles"))
+            Trie trie = new Trie();
+            try
             {
-                while ((line = reader.ReadLine()) != null) {
-                    tree.insertWord(line);
-                }
+                trie = obtain.GetStorage();
             }
-
-            return tree.searchPrefix("hello");
+            catch (Exception e)
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+            return trie.searchPrefix(input);
         }
     }
 }

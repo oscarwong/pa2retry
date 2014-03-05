@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -17,12 +20,11 @@ namespace pa2retry
     // [System.Web.Script.Services.ScriptService]
     public class obtain : System.Web.Services.WebService
     {
-        public Trie trie = new Trie();
-
-
+        
         [WebMethod]
         public static Trie GetStorage()
         {
+            Trie trie = new Trie();
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 ConfigurationManager.AppSettings["StorageConnectionString"]);
 
@@ -37,9 +39,10 @@ namespace pa2retry
             {
                 while ((line = sr.ReadLine()) != null)
                 {
-                    
+                    trie.insertWord(line);
                 }
             }
+            return trie;
         }
     }
 }

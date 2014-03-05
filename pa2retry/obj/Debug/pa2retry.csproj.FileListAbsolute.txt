@@ -8,3 +8,9 @@ C:\Users\iguest\Documents\pa2retry\pa2retry\bin\pa2retry.pdb
 C:\Users\iguest\Documents\pa2retry\pa2retry\obj\Debug\pa2retry.csprojResolveAssemblyReference.cache
 C:\Users\iguest\Documents\pa2retry\pa2retry\obj\Debug\pa2retry.dll
 C:\Users\iguest\Documents\pa2retry\pa2retry\obj\Debug\pa2retry.pdb
+C:\Users\iguest\Documents\pa2retry\pa2retry\bin\pa2retry.dll.config
+C:\Users\iguest\Documents\pa2retry\pa2retry\bin\Microsoft.WindowsAzure.Storage.dll
+C:\Users\iguest\Documents\pa2retry\pa2retry\bin\Microsoft.Data.OData.dll
+C:\Users\iguest\Documents\pa2retry\pa2retry\bin\Microsoft.Data.Edm.dll
+C:\Users\iguest\Documents\pa2retry\pa2retry\bin\System.Spatial.dll
+C:\Users\iguest\Documents\pa2retry\pa2retry\bin\Microsoft.WindowsAzure.Storage.xml
